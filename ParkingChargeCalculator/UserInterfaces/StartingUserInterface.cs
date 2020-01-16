@@ -29,6 +29,11 @@ namespace ParkingChargeCalculator.UserInterfaces
                 Console.WriteLine("{0} was not recognized, please try again.", command);
         }
 
+        /// <summary>
+        /// Takes user input from console, splits out params and returns to the console the total cost of parking
+        /// TODO - Implement time portion i.e. 09:00.00 for short stays inputs 
+        /// </summary>
+        /// <param name="command"></param>
         public static void StayCommand(string command)
         {     
             BaseStay baseStay;
@@ -59,11 +64,11 @@ namespace ParkingChargeCalculator.UserInterfaces
             }
             catch (FormatException)
             {
-                Console.WriteLine(); // TODO - Write useful message
+                Console.WriteLine("Error"); // TODO - Write useful message
             }
             catch (ArgumentNullException)
             {
-                Console.WriteLine(); // TODO - Write useful message
+                Console.WriteLine("Error"); // TODO - Write useful message
             }
         }
 

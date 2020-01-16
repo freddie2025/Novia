@@ -14,6 +14,8 @@ namespace ParkingChargeCalculator.Stays
 
 		public override decimal CalculateCharge()
 		{
+			if (StartDate > EndDate) throw new ArgumentException($"EndDate {EndDate} cannot be before the StartDate {StartDate}");
+
 			return Charge * Math.Ceiling((decimal)(EndDate - StartDate.AddDays(-1)).TotalDays);
 		}
 	}

@@ -19,6 +19,8 @@ namespace ParkingChargeCalculator.Stays
 
 		public override decimal CalculateCharge()
 		{
+			if (StartDate > EndDate) throw new ArgumentException($"EndDate {EndDate} cannot be before the StartDate {StartDate}");
+
 			decimal total = 0;
 
 			// Calculate Hours
@@ -30,9 +32,9 @@ namespace ParkingChargeCalculator.Stays
 
 			// Calculate Minutes
 			if (ValidDate(StartDate))
-				total -= CaculateMinutes(StartDate.Minute);
+				total -= CalculateMinutes(StartDate.Minute);
 			if (ValidDate(EndDate) && EndDate.Minute != 0)
-				total -= CaculateMinutes(60 - EndDate.Minute);
+				total -= CalculateMinutes(60 - EndDate.Minute);
 
 			return Math.Abs(Math.Round(total, 2, MidpointRounding.AwayFromZero));
 		}
@@ -49,7 +51,7 @@ namespace ParkingChargeCalculator.Stays
 			return false;
 		}
 
-		private decimal CaculateMinutes(int minutes)
+		private decimal CalculateMinutes(int minutes)
 		{
 			if (minutes == 0)
 				return 0;
