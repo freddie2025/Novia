@@ -77,7 +77,7 @@ namespace ParkingChargeCalculator.UserInterfaces
             Console.WriteLine();
             Console.WriteLine("Novia parking accepts the following commands:");
             Console.WriteLine();
-            Console.WriteLine("Stay 'Type' 'Start Date' 'EndDate' - Calculates parking charge");
+            Console.WriteLine("Stay 'Type' 'Start Date' 'End Date' - Calculates parking charge. Types avalible: long/short. Date Format: (dd/MM/yyyy)");
             Console.WriteLine();
             Console.WriteLine("Help - Displays all accepted commands.");
             Console.WriteLine();

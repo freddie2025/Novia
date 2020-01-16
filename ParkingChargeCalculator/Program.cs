@@ -7,15 +7,22 @@ namespace ParkingChargeCalculator
 	{
 		static void Main(string[] args)
 		{
-            Console.WriteLine("#==========================#");
-            Console.WriteLine("# Welcome to Novia Parking #");
-            Console.WriteLine("#==========================#");
+            try
+            {
+                Console.WriteLine("#==========================#");
+                Console.WriteLine("# Welcome to Novia Parking #");
+                Console.WriteLine("#==========================#");
 
-            StartingUserInterface.CommandLoop();
+                StartingUserInterface.CommandLoop();
 
-            Console.WriteLine("Thank you for using Novia Parking!");
-            Console.WriteLine("Have a nice day!");
-            Console.Read();
+                Console.WriteLine("Thank you for using Novia Parking!");
+                Console.WriteLine("Have a nice day!");
+                Console.Read();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 	}
 }
